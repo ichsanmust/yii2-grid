@@ -31,6 +31,7 @@ Contoh Penggunaan
 
 // controller 
 
+<?php
 public function actionIndex()
     {
         $searchModel = new ProductSearch();
@@ -41,8 +42,7 @@ public function actionIndex()
             'dataProvider' => $dataProvider,
         ]);
     }
-	
-------------
+?>
 
 // view 
 
