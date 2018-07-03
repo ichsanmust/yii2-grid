@@ -1,6 +1,5 @@
-The extension has been generated successfully.
 
-To enable it in your application, you need to create a git repository and require it via composer.
+create a git repository
 
 
 cd D:\wamp64\www\advanced-207\backend\runtime\tmp-extensions/yii2-grid
@@ -10,8 +9,6 @@ git commit
 git remote add origin https://path.to/your/repo
 git push -u origin master
 The next step is just for initial development, skip it if you directly publish the extension on packagist.org
-
-
 
 
 Add the newly created repo to your composer.json.
