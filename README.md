@@ -28,10 +28,8 @@ di require section file `composer.json` . lalu jalan kan composer update
 Contoh Penggunaan 
 ------------
 
-
 // controller 
-
-<?php
+```
 public function actionIndex()
     {
         $searchModel = new ProductSearch();
@@ -42,10 +40,10 @@ public function actionIndex()
             'dataProvider' => $dataProvider,
         ]);
     }
-?>
+```
 
 // view 
-
+```
 <?php
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -121,6 +119,7 @@ $this->registerJs(
 
 
 ?>
+```
 
 
 
