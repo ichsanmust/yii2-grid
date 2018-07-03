@@ -6,24 +6,39 @@ dimana saat kita telah melakukan select data, dan kita melakukan searching, filt
 data selected yang sebelumnya menjadi hilang, dengan extension ini, dapat memperbaiki kekurangan tersebut.
 semoga bermanfaat...
 
+
+
 Installation
 ------------
 
 Disarankan Install melalui composer [composer](http://getcomposer.org/download/).
-
 jalan kan perintah
-
 ```
 php composer.phar require --prefer-dist ichsanmust/yii2-grid "@dev"
 ```
-
 atau tambahkan
-
 ```
 "ichsanmust/yii2-grid": "@dev"
 ```
-
 di require section file `composer.json` . lalu jalan kan composer update
+
+
+Install From the Archive
+------------
+Download the latest release dari sini [realeses](https://github.com/ichsanmust/yii2-grid/releases)., dan extract di project. 
+di config aplikasi , tambakan aliases dan path untuk extension ini.
+
+...
+return [
+    ...
+    'aliases' => [
+        '@ichsanmust/grid' => 'path/to/your/extracted',
+        // contoh: '@ichsanmust/grid' => '@app/extensions/ichsanmust/yii2-grid',
+        ...
+    ]
+];
+...
+
 
 Contoh Penggunaan 
 ------------
