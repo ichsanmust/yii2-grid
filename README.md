@@ -1,4 +1,4 @@
-Grid Extensions (yii2-grid-select)
+Grid Extensions (yii2-grid-select => Yii2 extension to keep selected rows in GridView when sorting and pagination.)
 ===============
 Extensions ini diperuntukan untuk kebutuhan select data multiple di grid view yii2 dengan memakai checkbox.
 permasalahan yang ada, jika kita memakai 'class' => 'yii\grid\CheckboxColumn' dari yii, ada kekurangan,
