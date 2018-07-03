@@ -30,11 +30,11 @@ di config aplikasi , tambakan aliases dan path untuk extension ini.
 
 ...
 return [
-    ...
+    
     'aliases' => [
         '@ichsanmust/grid' => 'path/to/your/extracted',
         // contoh: '@ichsanmust/grid' => '@app/extensions/ichsanmust/yii2-grid',
-        ...
+        
     ]
 ];
 ...
