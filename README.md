@@ -23,6 +23,6 @@ atau tambahkan
 "ichsanmust/yii2-grid": "@dev"
 ```
 
-di require section file `composer.json` .
+di require section file `composer.json` . lalu jalan kan composer update
 
 
