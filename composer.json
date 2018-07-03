@@ -1,8 +1,8 @@
 {
     "name": "ichsanmust/yii2-grid",
-    "description": "Extension Untuk Selected (Checkbox Data) di grid view",
+    "description": "Extension grid view (yii2-grid-select)",
     "type": "yii2-extension",
-    "keywords": ["yii2","extension","select gridview","sel-gridview","checkbox-gridview"],
+    "keywords": ["yii2","extension","select gridview","sel-gridview","checkbox-gridview","yii2-grid-select"],
     "license": "Apache-2.0",
     "authors": [
         {

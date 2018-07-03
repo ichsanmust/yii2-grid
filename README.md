@@ -1,4 +1,4 @@
-Select (Checkbox) Grid view Extensions
+Grid Extensions (yii2-grid-select)
 ===============
 Extensions ini diperuntukan untuk kebutuhan select data multiple di grid view yii2 dengan memakai checkbox.
 permasalahan yang ada, jika kita memakai 'class' => 'yii\grid\CheckboxColumn' dari yii, ada kekurangan,
@@ -117,6 +117,7 @@ $this->registerJs(
 
 ?>
 ```
+=======================
 
 
 
