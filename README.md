@@ -107,11 +107,12 @@ $this->params['breadcrumbs'][] = $this->title;
 $this->registerJs(
 	   '
 		$("#pjax-product-gridview").on("pjax:send", function() { // beforeSend
-					
+				$("#loader").show();
 		})
 		$("#pjax-product-gridview").on("pjax:complete", function() { // complete
 			retainCheckedSingle(); // ini harus di deklarasikan 
 			setCheckedChooseAll(); // ini harus di deklarasikan 
+			$("#loader").hide();
 		})
 		'
 	);
