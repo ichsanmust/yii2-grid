@@ -134,8 +134,9 @@ $this->registerJs(
 ```
 
 catatan 
+------------
 untuk yang bermasalah mengenai pjax yang tidak terdeteksi di Jquery Versi 3 ke atas, silahkan pake extensions ini [pjax3](https://github.com/ichsanmust/yii2-widgets)
-=======================
+------------
 
 
 
