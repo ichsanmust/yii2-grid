@@ -69,10 +69,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <?php
-	\yii\widgets\Pjax::begin([
+	\yii\widgets\Pjax::begin([  // agar content nya di request secara ajax, maka harus pake widgets pjax
 		'id'=>'pjax-product-gridview',
 		'enablePushState'=>false,
 	]); 
+	//  untuk yang bermasalah mengenai pjax yang tidak terdeteksi di Jquery Versi 3 ke atas, silahkan pake extensions ini [pjax3](https://github.com/ichsanmust/yii2-widgets)
 ?>
 
 <?= GridView::widget([
@@ -100,7 +101,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		['class' => 'yii\grid\ActionColumn'],
 	],
 ]); ?>
-<?php \yii\widgets\Pjax::end(); ?>
+<?php \yii\widgets\Pjax::end();   // agar content nya di request secara ajax, maka harus pake widgets pjax ?>
 
 <?php
 $this->registerJs(
