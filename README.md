@@ -72,6 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
 	\yii\widgets\Pjax::begin([  // agar content nya di request secara ajax, maka harus pake widgets pjax
 		'id'=>'pjax-product-gridview',
 		'enablePushState'=>false,
+		'timeout'=>100000,
 	]); 
 ?>
 
