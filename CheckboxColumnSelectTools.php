@@ -44,6 +44,25 @@ class CheckboxColumnSelectTools extends Column
 			   setCheckedChooseAll()
 			});
 			
+			// new
+			function removeAll() {
+				//alert("ok");
+				listChecked = [];
+				removeAllSelected();
+				setCheckedChooseAll();
+			}
+			
+			// new
+			function addSelected(arrayData) {
+				//removeAllSelected();
+				$.each(arrayData, function(key, value){
+				   //console.log(String(value));
+				   addListChecked(String(value));
+				})  
+				retainCheckedSingle();
+				setCheckedChooseAll();
+			}
+			
 			function initiateListChecked() {
 				
 				// kondisi update halaman dimana biasa nya saat halaman pertama kali muncul sudah ada yang terchecked
@@ -57,6 +76,13 @@ class CheckboxColumnSelectTools extends Column
 			
 			function addListChecked(val) {
 				listChecked.push(val); 
+			}
+			
+			// new
+			function removeAllSelected(){
+				$(".'.$idPrefix.'checkboxSingle:enabled").each(function(i) {
+					$(this).prop("checked", false);
+				});
 			}
 			
 			function removeListChecked(arr) {
@@ -103,7 +129,7 @@ class CheckboxColumnSelectTools extends Column
 				}) 
 			}
 			
-			jQuery(document).on("click",".'.$idPrefix.'checkboxSingle", function(){ // on click select Single
+			jQuery(document).on("click",".'.$idPrefix.'checkboxSingle:enabled", function(){ // on click select Single
 				
 				// add an remove list checked
 				if ($(this).is(":checked")){
@@ -122,7 +148,7 @@ class CheckboxColumnSelectTools extends Column
 				$("td input:checkbox:enabled",table).prop("checked",this.checked);
 				
 				// add an remove list checked
-				$(".'.$idPrefix.'checkboxSingle").each(function(i) {
+				$(".'.$idPrefix.'checkboxSingle:enabled").each(function(i) {
 					var btn = $(this);
 					if (btn.is(":checked")){
 						addListChecked(btn.val());

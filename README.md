@@ -119,6 +119,8 @@ $this->registerJs(
 ?>
 			
 <a id ="getSelected" class ="btn btn-success" > Get Selected Value </a>
+<a id ="clearSelected" class ="btn btn-success" > clear Selected Value </a>
+<a id ="addSelected" class ="btn btn-success" > add Selected 3 and 2 </a>
 
 <?php
 $this->registerJs(
@@ -126,6 +128,15 @@ $this->registerJs(
 		jQuery(document).on("click","#getSelected",function(e){
 			console.log(getListChecked()); // ini yang di olah
 			alert(getListChecked()); // ini yang di olah
+			return false;
+		});
+		jQuery(document).on("click","#clearSelected",function(e){
+			removeAll();
+			return false;
+		});
+		jQuery(document).on("click","#addSelected",function(e){
+			var arrayData =["3","2"];
+			addSelected(arrayData);
 			return false;
 		});
 		'
