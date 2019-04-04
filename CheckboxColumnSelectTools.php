@@ -20,6 +20,7 @@ class CheckboxColumnSelectTools extends Column
 	
 	
 	public $valueInit = [];
+	public $valueInitSingle = false;
 	public $uniqueValue;
 	public $disabledCheckboxOnValue = true;
 	public $checkedCheckboxOnValue = true;
@@ -227,6 +228,12 @@ class CheckboxColumnSelectTools extends Column
 		$disabled = false ;
 		$checked = false;
 		
+		if ($this->valueInitSingle instanceof Closure) {
+			$valueInitSingle = call_user_func($this->valueInitSingle, $model, $key, $index, $this);
+        } else { 
+            $valueInitSingle = $this->valueInitSingle;
+        }
+		
 		if (count($this->valueInit) > 0 ){
 			if (in_array($model->$uniqueValue, $this->valueInit)){
 				if($this->disabledCheckboxOnValue){
@@ -244,12 +251,22 @@ class CheckboxColumnSelectTools extends Column
 				}
 			}
 		}else{
-			if($this->disabledCheckboxOnValue){
-				$disabled = false ;
+			if ($valueInitSingle === true){
+				if($this->disabledCheckboxOnValue){
+					$disabled = true ;
+				}
+				if ($this->checkedCheckboxOnValue){
+					$checked = true;
+				}
+			}else{
+				if($this->disabledCheckboxOnValue){
+					$disabled = false ;
+				}
+				if ($this->checkedCheckboxOnValue){
+					$checked = false;
+				}
 			}
-			if ($this->checkedCheckboxOnValue){
-				$checked = false;
-			}
+			
 		}
 		
 		$id = $idGRid."-"."choose_".$model->$uniqueValue;

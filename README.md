@@ -88,6 +88,14 @@ $this->params['breadcrumbs'][] = $this->title;
 				'name'=>'choose', // nama untuk checkbox
 				'uniqueValue'=>'id_product', // value unique yang akan di select
 				//'valueInit'=> array(3,2), // value data selected saat inisiasi gridview
+				/*'valueInitSingle'=> function ($model, $key, $index, $column) { // value data selected per single data
+						if($model->STATUS == 3){ 
+							return true;
+						}else{
+							return false;
+						} 
+					},
+				*/
 				//'disabledCheckboxOnValue' =>true, // saat valueInit ada datanya, checkbox yang ter select akan di disabled
 				//'checkedCheckboxOnValue' => true, // saat valueInit ada datanya, checkbox yang ter select akan di checked
 					
