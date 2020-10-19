@@ -38,9 +38,7 @@ class CheckboxColumnSelectTools extends Column
 			$jsonDataInit = json_encode(array());
 		}
 		$js = '
-   
-			var listChecked = [];
-			
+   		
 			$("document").ready(function(){ 
 			   initiateListChecked();
 			   setCheckedChooseAll()
@@ -162,9 +160,7 @@ class CheckboxColumnSelectTools extends Column
 			});
 			
 		';
-		if (!Yii::$app->request->isPjax) {
-			$this->grid->getView()->registerJs($js); 
-		}
+		$this->grid->getView()->registerJs($js); 
 		
 		
 		
@@ -215,7 +211,7 @@ class CheckboxColumnSelectTools extends Column
 			return Html::checkBox($idGRid."-".'checkboxAll', false, [
 					  'class' => $idGRid."-".'checkboxAll',
 					  'id'=>$idGRid."-".'chooseAll',
-					  'label' => '<label for="'.$idGRid.'-chooseAll"></label>',
+					  //'label' => '<label for="'.$idGRid.'-chooseAll"></label>',
 					]);
             //return Html::checkBox($name, false, ['class' => 'select-on-check-all']);
         }
@@ -280,7 +276,7 @@ class CheckboxColumnSelectTools extends Column
 						'checked'=>$checked, 
 						'class'=>$idGRid."-".'checkboxSingle',
 						'id' => $id,
-						'label' => '<label for="'.$id.'"></label>'
+						// 'label' => '<label for="'.$id.'"></label>'
 					];
 						
         if ($this->checkboxOptions instanceof Closure) {

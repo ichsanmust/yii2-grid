@@ -67,6 +67,10 @@ $this->title = 'Products';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
+<script>
+	// tambahkan ini untuk inisiasi
+	var listChecked = [];
+</script>
 
 <?php
 	\yii\widgets\Pjax::begin([  // agar content nya di request secara ajax, maka harus pake widgets pjax
@@ -75,6 +79,44 @@ $this->params['breadcrumbs'][] = $this->title;
 		'timeout'=>100000,
 	]); 
 ?>
+
+<script>
+	// jika parent dari halaman ini merupakan pjax, (pagination)  jika bukan, bisa tidak dipakai
+	$("ul.pagination li a").on("click", function(e) {
+		var $this = $(this);
+		var hrefData = $this.attr("href");
+
+		$.pjax.reload({
+			container: "#pjax-product-gridview",
+			timeout: 100000,
+			url: hrefData,
+			push: false,
+			replace: false,
+			scrollTo: false,
+		}).done(function() {
+			$this.tab("show");
+		});
+		return false;
+	});
+
+	// jika parent dari halaman ini merupakan pjax, (sorting)  jika bukan, bisa tidak dipakai
+	$('table thead th a').on("click", function(e) {
+		var $this = $(this);
+		var hrefData = $this.attr("href");
+
+		$.pjax.reload({
+			container: "#pjax-product-gridview",
+			timeout: 100000,
+			url: hrefData,
+			push: false,
+			replace: false,
+			scrollTo: false,
+		}).done(function() {
+			$this.tab("show");
+		});
+		return false;
+	});
+</script>
 
 <?= GridView::widget([
 	'id'=>'crud-gridview-ichsanmust',
