@@ -94,7 +94,6 @@ $this->params['breadcrumbs'][] = $this->title;
 			replace: false,
 			scrollTo: false,
 		}).done(function() {
-			$this.tab("show");
 		});
 		return false;
 	});
@@ -112,7 +111,6 @@ $this->params['breadcrumbs'][] = $this->title;
 			replace: false,
 			scrollTo: false,
 		}).done(function() {
-			$this.tab("show");
 		});
 		return false;
 	});
