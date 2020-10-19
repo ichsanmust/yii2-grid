@@ -124,6 +124,7 @@ $this->params['breadcrumbs'][] = $this->title;
 		['class' => 'yii\grid\SerialColumn'],
 
 		[   
+				'_pjax' =>'pjax-product-gridview',
 				'class' => 'ichsanmust\grid\CheckboxColumnSelectTools',  // class select nya memakai ini
 				'name'=>'choose', // nama untuk checkbox
 				'uniqueValue'=>'id_product', // value unique yang akan di select
