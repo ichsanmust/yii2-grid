@@ -163,15 +163,15 @@ class CheckboxColumnSelectTools extends Column
 			
 		';
 		if (!Yii::$app->request->isPjax) {
-			$this->grid->getView()->registerJs($js);
+			$this->grid->getView()->registerJs($js, \yii\web\View::POS_HEAD);
 		} else {
 			$getData = Yii::$app->request->get();
 			if ($this->_pjax != '') {
-				if ($getData['_pjax'] != '#'.$this->_pjax) {
-					$this->grid->getView()->registerJs($js);
+				if ($getData['_pjax'] != '#' . $this->_pjax) {
+					$this->grid->getView()->registerJs($js, \yii\web\View::POS_HEAD);
 				}
-			}else{
-				$this->grid->getView()->registerJs($js);
+			} else {
+				$this->grid->getView()->registerJs($js, \yii\web\View::POS_HEAD);
 			}
 		}
 

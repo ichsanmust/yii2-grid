@@ -193,6 +193,20 @@ $this->registerJs(
 
 
 ?>
+
+
+atau bisa seperti ini 
+
+<a id="getSelectedonclick" onclick="getCheckboxData()" class="btn btn-main"> get data </a>
+
+<script>
+	function getCheckboxData() {
+		console.log(getListChecked()); // ini yang di olah
+		alert(getListChecked()); // ini yang di olah
+		return false;
+	}
+</script>
+
 ```
 
 catatan 
