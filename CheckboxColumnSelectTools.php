@@ -4,6 +4,7 @@ namespace ichsanmust\grid;
 use Closure;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
+use yii;
 
 /**
 
@@ -161,7 +162,9 @@ class CheckboxColumnSelectTools extends Column
 			});
 			
 		';
-		$this->grid->getView()->registerJs($js); 
+		if (!Yii::$app->request->isPjax) {
+			$this->grid->getView()->registerJs($js); 
+		}
 		
 		
 		
